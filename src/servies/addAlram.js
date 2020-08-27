@@ -14,7 +14,7 @@ export default async (req, res, next) => {
     
     saveToFolder(newTitle, (err) => {    
       if (err) {
-        return res.status(404).send('not saved new title');
+        return res.status(400).send('not saved new title');
       }
       const {content} = readAlrams();
       return res.status(200).send(content)
